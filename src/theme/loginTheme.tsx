@@ -45,5 +45,15 @@ export const loginStyles = StyleSheet.create({
     paddingHorizontal: 30,
     justifyContent: 'center',
     marginBottom: 50
+  },
+  btnReturn: {
+    position: 'absolute',
+    top: 50,
+    left: 20,
+    borderWidth: 1,
+    borderColor: '#FFF',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 100
   }
 })
