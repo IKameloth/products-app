@@ -5,6 +5,11 @@ export interface LoginResponse {
   token: string
 }
 
+export interface RegisterResponse {
+  usuario: Usuario
+  token: string
+}
+
 export interface Usuario {
   rol: string
   estado: boolean
@@ -16,6 +21,12 @@ export interface Usuario {
 }
 
 export interface LoginData {
+  correo: string
+  password: string
+}
+
+export interface RegisterData {
+  nombre: string
   correo: string
   password: string
 }

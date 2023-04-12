@@ -1,7 +1,7 @@
 import { Usuario } from '../interfaces'
 
 export interface AuthState {
-  status: 'cheking' | 'authenticated' | 'not-authenticated'
+  status: 'checking' | 'authenticated' | 'not-authenticated'
   token: string | null
   errorMessage: string
   user: Usuario | null
@@ -9,6 +9,7 @@ export interface AuthState {
 
 type AuthAction =
   | { type: 'signUp'; payload: { token: string; user: Usuario } }
+  | { type: 'signIn'; payload: { token: string; user: Usuario } }
   | { type: 'addError'; payload: string }
   | { type: 'removeError' }
   | { type: 'notAuthenticated' }
@@ -29,6 +30,7 @@ export const authReducer = (state: AuthState, action: AuthAction): AuthState => 
         ...state,
         errorMessage: ''
       }
+    case 'signIn':
     case 'signUp':
       return {
         ...state,
